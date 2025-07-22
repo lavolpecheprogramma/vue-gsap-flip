@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "configurations": [
+    {
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "name": "Local Server",
+      "restart": true,
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/nodemon",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      // WARNING, if your package.json has `"type": "commonjs` or no type specified
+      // uncomment the following runtimeArgs block
+      // "runtimeArgs": [
+      //   "--exec",
+      //   "node",
+      //   "--loader",
+      //   "ts-node/esm",
+      // ],
+      "type": "node",
+      "args": [
+        "${workspaceFolder}/local.server.ts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "css.format.enable": false,
+  "css.lint.unknownAtRules": "ignore",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    // "source.fixAll.stylelint": "explicit",
+    "source.organizeImports": "never",
+    "source.removeUnusedImports": "explicit"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".env": ".env.*",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage",
+    "*.ts": "$(capture)*.ts, $(capture).*.ts",
+    "*.vue": "$(capture)*.vue, $(capture).*.ts",
+    "nuxt.config.ts": ".stylelintrc, .stylelintcache, components.json, eslint.config.mjs, tsconfig.json, .env*",
+    "package.json": "package*, .npmrc*, .npmignore, .vscode*"
+  },
+  "explorer.sortOrder": "default",
+  "eslint.format.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "yaml",
+    "xml",
+    "gql",
+    "graphql"
+  ],
+  "eslint.workingDirectories": [
+    "../packages/*"
+  ],
+  "javascript.format.enable": false,
+  "javascript.format.semicolons": "remove"
+  // "stylelint.validate": [
+  //   "css",
+  //   "scss",
+  //   "vue"
+  // ]
+}

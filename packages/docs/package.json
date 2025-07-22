@@ -1,0 +1,24 @@
+{
+  "name": "@vue-gsap-flip/docs",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@vue-gsap-flip/core": "^0.1.0",
+    "@vue-gsap-flip/debug": "^0.1.0",
+    "@vue-gsap-flip/reduced-motion": "^0.1.0",
+    "@vue-gsap-flip/vitepress-router": "^0.1.0",
+    "@vue-gsap-flip/vue-router": "^0.1.0",
+    "gsap": "^3.13.0",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}

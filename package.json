@@ -1,0 +1,47 @@
+{
+  "name": "vue-gsap-flip-monorepo",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "workspaceRelease": {
+    "npmRelease": true,
+    "perPackageConfig": {
+      "packages/docs": {
+        "npmRelease": false
+      }
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "type-check": "npm run type-check --workspaces",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "docs:dev": "vitepress dev packages/docs",
+    "docs:build": "vitepress build packages/docs",
+    "docs:preview": "vitepress preview packages/docs",
+    "release": "semantic-release-npm-workspaces-monorepo"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vueuse/core": "^13.5.0",
+    "eslint": "^9.31.0",
+    "gsap": "^3.13.0",
+    "semantic-release": "^22.0.7",
+    "semantic-release-npm-workspaces-monorepo": "^3.1.0",
+    "typescript": "^5.8.3",
+    "unocss": "^66.3.3",
+    "vite": "^7.0.4",
+    "vite-plugin-dts": "^4.5.4",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.17",
+    "vue-tsc": "^3.0.1"
+  }
+}
