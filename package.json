@@ -21,7 +21,7 @@
   "workspaceRelease": {
     "npmRelease": true,
     "perPackageConfig": {
-      "packages/docs": {
+      "packages/docs/**": {
         "npmRelease": false
       }
     }

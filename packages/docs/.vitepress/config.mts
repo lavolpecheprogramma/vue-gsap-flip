@@ -15,7 +15,7 @@ export default defineConfig({
     resolve: {
       alias: process.env.CI
         ? {}
-        : { '@vue-gsap-flip/core': resolve(__dirname, '../core/src') }
+        : { '@vue-gsap-flip/core': resolve(__dirname, '../../core/src') }
     },
     plugins: [
       UnoCSS() as any
