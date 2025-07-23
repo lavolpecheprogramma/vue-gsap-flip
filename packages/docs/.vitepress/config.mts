@@ -1,5 +1,4 @@
 import { dirname, resolve } from 'node:path'
-import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 
 import UnoCSS from 'unocss/vite'
@@ -13,9 +12,13 @@ export default defineConfig({
   base: '/vue-gsap-flip/',
   vite: {
     resolve: {
-      alias: process.env.CI
-        ? {}
-        : { '@vue-gsap-flip/core': resolve(__dirname, '../../core/src') }
+      alias: {
+        '@vue-gsap-flip/core': resolve(__dirname, '../../core/src'),
+        '@vue-gsap-flip/debug': resolve(__dirname, '../../debug/src'),
+        '@vue-gsap-flip/reduced-motion': resolve(__dirname, '../../reduced-motion/src'),
+        '@vue-gsap-flip/vue-router': resolve(__dirname, '../../vue-router/src'),
+        '@vue-gsap-flip/vitepress-router': resolve(__dirname, '../../vitepress-router/src')
+      }
     },
     plugins: [
       UnoCSS() as any
