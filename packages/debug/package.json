@@ -1,7 +1,7 @@
 {
   "name": "@vue-gsap-flip/debug",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Debug utilities for vue-gsap-flip",
   "author": "Alberto Parziale <parziale.alberto@gmail.com>",
   "license": "MIT",
@@ -41,6 +41,6 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "0.1.0"
+    "@vue-gsap-flip/core": "1.0.0"
   }
 }
