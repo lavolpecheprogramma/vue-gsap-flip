@@ -27,6 +27,10 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
   "scripts": {
     "build": "vite build",
     "type-check": "vue-tsc --noEmit",

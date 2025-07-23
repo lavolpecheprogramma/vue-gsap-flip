@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/lavolpecheprogramma/vue-gsap-flip.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
