@@ -3,6 +3,18 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "description": "A Vue 3 library for creating smooth FLIP animations using GSAP",
+  "author": "Alberto Parziale <parziale.alberto@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavolpecheprogramma/vue-gsap-flip.git"
+  },
+  "keywords": [
+    "vue",
+    "gsap",
+    "flip"
+  ],
   "workspaces": [
     "packages/*"
   ],

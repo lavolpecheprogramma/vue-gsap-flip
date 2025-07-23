@@ -3,6 +3,13 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
+  "description": "Documentation site for vue-gsap-flip library",
+  "author": "Alberto Parziale <parziale.alberto@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavolpecheprogramma/vue-gsap-flip.git"
+  },
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
