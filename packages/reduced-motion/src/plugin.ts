@@ -9,11 +9,11 @@ export const VueFlipReducedMotionPlugin: VueFlipPlugin = {
     let isReducedMotion = mm.matches === true
 
     function detachMiddleware (_id: string, _el: HTMLElement, config: FlipElementConfig) {
-      return isReducedMotion && config.respectReducedMotion === false
+      return !isReducedMotion || config.respectReducedMotion === false
     }
 
     function attachMiddleware (_id: string, _el: HTMLElement, config: FlipElementConfig) {
-      return isReducedMotion && config.respectReducedMotion === false
+      return !isReducedMotion || config.respectReducedMotion === false
     }
 
     mm.addEventListener('change', e => (isReducedMotion = e.matches))
