@@ -33,7 +33,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'GitHub', link: 'https://github.com/your-username/vue-gsap-flip' }
+      { text: 'GitHub', link: 'https://github.com/lavolpecheprogramma/vue-gsap-flip' }
     ],
 
     sidebar: [
@@ -129,7 +129,7 @@ export default defineConfig({
     // },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-username/vue-gsap-flip' }
+      { icon: 'github', link: 'https://github.com/lavolpecheprogramma/vue-gsap-flip' }
     ],
 
     footer: {
