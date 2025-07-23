@@ -16,7 +16,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "^0.1.0",
+    "@vue-gsap-flip/core": "0.1.0",
     "@vue-gsap-flip/debug": "^0.1.0",
     "@vue-gsap-flip/reduced-motion": "^0.1.0",
     "@vue-gsap-flip/vitepress-router": "^0.1.0",
