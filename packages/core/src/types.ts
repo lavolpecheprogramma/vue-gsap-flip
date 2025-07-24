@@ -4,6 +4,13 @@ export interface BaseFlipElementConfig {
   flipVars?: Flip.FromToVars
 }
 
+export interface FlipElementProps {
+  id: string
+  enabled?: boolean
+  trigger?: unknown
+  config?: FlipElementConfig
+}
+
 // Type augmentation system for plugins
 export interface FlipElementConfigAugmentation {
   // This interface can be extended by plugins to augment FlipElementConfig

@@ -5,14 +5,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 
 import { useFlip } from '../composable/useFlip'
 import { mergeDefaultConfig } from '../core'
-import type { FlipElementConfig } from '../types'
-
-export interface FlipElementProps {
-  id: string
-  enabled?: boolean
-  trigger?: unknown
-  config?: FlipElementConfig
-}
+import type { FlipElementProps } from '../types'
 
 const props = withDefaults(defineProps<FlipElementProps>(), {
   enabled: true,
