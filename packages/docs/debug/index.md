@@ -10,10 +10,9 @@ npm install @vue-gsap-flip/debug
 
 ```vue
 <script setup lang="ts">
-import { useFlip } from '@vue-gsap-flip/core'
+import { flipManager } from '@vue-gsap-flip/core'
 import { VueFlipDebugPlugin } from '@vue-gsap-flip/debug'
 
-const flipManager = useFlip()
 // Important: The debug plugin should be registered LAST, after all other plugins
 flipManager.registerPlugin(VueFlipDebugPlugin)
 </script>

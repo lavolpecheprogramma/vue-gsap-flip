@@ -14,10 +14,9 @@ npm install @vue-gsap-flip/vue-router
 
 ```vue
 <script setup lang="ts">
-import { useFlip } from '@vue-gsap-flip/core'
+import { flipManager } from '@vue-gsap-flip/core'
 import { VueFlipRouterPlugin } from '@vue-gsap-flip/vue-router'
 
-const flipManager = useFlip()
 flipManager.registerPlugin(VueFlipRouterPlugin)
 </script>
 ```

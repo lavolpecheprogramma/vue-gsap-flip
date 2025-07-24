@@ -243,6 +243,6 @@ Vue Flip is built on top of GSAP's Flip plugin. For detailed information about t
 
 ## Next Steps
 
+- **[vFlip directive](./directive)** - Learn about the vFlip directive
 - **[FlipElement Component](./flip-element)** - Learn about the Vue component wrapper
-- **[Configuration](./configuration)** - Explore all configuration options
 - **[Plugin System](./plugin-system)** - Understand the extensible plugin architecture

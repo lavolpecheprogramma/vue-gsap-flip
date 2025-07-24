@@ -200,5 +200,4 @@ const MyPlugin: VueFlipPlugin = {
 ## Next Steps
 
 - **[Router Integration](../router/)** - Learn about the built-in router plugin
-- **[Configuration](../core/configuration)** - Understand configuration options
 - **[Core Documentation](../core/)** - See plugin examples in action

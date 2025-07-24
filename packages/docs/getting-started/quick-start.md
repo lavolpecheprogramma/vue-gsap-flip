@@ -1,5 +1,6 @@
 <script setup>
 import BasicCardFlip from '../components/BasicCardFlip.vue'
+import DirectiveBasicCardFlip from '../components/DirectiveBasicCardFlip.vue'
 </script>
 
 # Quick Start
@@ -15,52 +16,25 @@ npm install @vue-gsap-flip/core gsap
 ```
 
 ## Your First Flip Animation
+There are two way to create make an element flippable:
+- using the [FlipElement](./core/FlipElement) component
+- using the [vFlip](./core/directive) directive
 
-Create a simple flip animation that responds to state changes:
+In this example we create a simple flip animation that responds to a state changes:
+
+Flip Element example:
 <BasicCardFlip />
 ::: details Demo code
 <<< ../components/BasicCardFlip.vue
 :::
 
-## How It Works
+Directive example:
+<DirectiveBasicCardFlip />
+::: details Demo code
+<<< ../components/BasicCardFlip.vue
+:::
 
-1. **`FlipElement`** - The Vue component that wraps elements you want to animate
-2. **`id`** - A unique identifier for the element (required)
-3. **`config`** - Configuration object for the animation behavior (optional)
-3. **`trigger`** - A reactive prop to trigger the animation (optional)
-4. **`setEl`** - A function provided by the slot to set the element reference (required)
-
-## Key Concepts
-
-### FlipElement Component
-
-The `FlipElement` component is the main way to create flip animations:
-
-```vue
-<template>
-  <FlipElement
-    id="unique-id"
-    :config="animationConfig"
-    v-slot="{ setEl }"
-  >
-    <div :ref="setEl">Your content here</div>
-  </FlipElement>
-</template>
-```
-
-### Element Reference
-
-The `setEl` function is crucial - it tells Vue Flip which element to animate:
-
-```vue
-<template #default="{ setEl }">
-  <div :ref="setEl">
-    This element will flip
-  </div>
-</template>
-```
-
-### Configuration
+### Common Configuration
 
 The `config` prop controls the animation behavior:
 
@@ -71,6 +45,14 @@ interface FlipElementConfig {
   flipVars?: Flip.FromToVars // GSAP Flip animation variables
 }
 ```
+```typescript
+interface FlipElementConfig {
+  clone?: boolean // Whether to clone the element during flip
+  flipStateVars?: Flip.FlipStateVars // GSAP Flip state variables
+  flipVars?: Flip.FromToVars // GSAP Flip animation variables
+}
+```
+For the flipStateVars check the [gsap docs](https://gsap.com/docs/v3/Plugins/Flip/static.getState()/#configuration), for the FromToVars check the [gsap docs](https://gsap.com/docs/v3/Plugins/Flip/static.from())
 
 ### Trigger
 
@@ -82,5 +64,4 @@ An usage example is a ref that change a class and trigger the animation.
 Now that you have the basics, explore:
 
 - **[Flip Manager](../core/flip-manager)** - Learn about the core API
-- **[Configuration](../core/configuration)** - Customize your animations
 - **[Router Integration](../router/)** - Add route-based animations

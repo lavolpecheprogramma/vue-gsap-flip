@@ -32,7 +32,7 @@ export type FlipElementConfig = BaseFlipElementConfig & FlipElementConfigAugment
 The router plugin extends the type augmentation interface:
 
 ```typescript
-// packages/router/src/types.ts
+// packages/vue-router/src/types.ts
 export interface RouteFlipConfig {
   from?: string[]
   routeParams?: Record<string, string>

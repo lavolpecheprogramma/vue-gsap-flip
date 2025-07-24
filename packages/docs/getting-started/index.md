@@ -32,13 +32,19 @@ A flip animation is a technique where an element appears to "flip" from one posi
 ```
 Vue Flip
 ├── Core Package (@vue-gsap-flip/core)
+│   ├── FlipManager - core
 │   ├── useFlip() - Main composable
 │   ├── FlipElement - Vue component
+│   ├── vFlip - Vue directive
 │   └── Plugin System - Extensible architecture
+├── Debug Package (@vue-gsap-flip/debug)
+│   └── VueFlipDebugPlugin - Debug middleware
 ├── Reduced Motion Package (@vue-gsap-flip/reduced-motion)
 │   └── VueFlipReducedMotionPlugin - Reduced motion middleware
-└── Router Package (@vue-gsap-flip/vue-router)
-    └── VueFlipRouterPlugin - Router integration
+├── Vitepress-Router Package (@vue-gsap-flip/vitepress-router)
+│   └── VueFlipReducedMotionPlugin - Vitepress router integration
+└── Vue-Router Package (@vue-gsap-flip/vue-router)
+    └── VueFlipRouterPlugin - Vue router integration
 ```
 
 ## When to Use Vue Flip

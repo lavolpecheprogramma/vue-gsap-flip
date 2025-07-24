@@ -93,9 +93,8 @@ A real example can be during a vue transition (or a page transition), where we c
 
 - **[Flip Manager](./flip-manager)** - Learn about the core flip manager
 - **[FlipElement Component](./flip-element)** - Understand the Vue component
-- **[Configuration](./configuration)** - Explore all configuration options
 - **[Plugin System](./plugin-system)** - Learn about the extensible plugin architecture
 
 ## Next Steps
 
-Ready to dive deeper? Start with the [Flip Manager](./flip-manager) to understand the core concepts, or explore the [Configuration](./configuration) options to customize your animations.
+Ready to dive deeper? Start with the [Flip Manager](./flip-manager) to understand the core concepts.

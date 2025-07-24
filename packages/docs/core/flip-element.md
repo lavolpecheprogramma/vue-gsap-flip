@@ -71,6 +71,5 @@ Always use unique IDs for each FlipElement:
 ```
 ## Next Steps
 
-- **[Configuration](./configuration)** - Learn about all configuration options
 - **[Flip Manager](./flip-manager)** - Understand the underlying flip manager
 - **[Plugin System](./plugin-system)** - Explore the extensible plugin architecture

@@ -7,7 +7,7 @@ import { defineConfig } from 'vitepress'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Vue Flip',
+  title: 'Vue GSAP Flip',
   description: 'A Vue 3 library for creating smooth flip animations using GSAP\'s Flip plugin',
   base: '/vue-gsap-flip/',
   vite: {
@@ -52,6 +52,7 @@ export default defineConfig({
           { text: 'Overview', link: '/core/' },
           { text: 'Flip Manager', link: '/core/flip-manager' },
           { text: 'FlipElement Component', link: '/core/flip-element' },
+          { text: 'vFlip Directive', link: '/core/directive' },
           { text: 'Plugin System', link: '/core/plugin-system' },
           { text: 'Type augmentation', link: '/core/type-augmentation' }
         ]
@@ -81,53 +82,6 @@ export default defineConfig({
         ]
       }
     ],
-    // '/router/': [
-    //   {
-    //     text: '@vue-gsap-flip/reduced-motion',
-    //     items: [
-    //       { text: 'Overview', link: '/reduced-motion/' }
-    //     ]
-    //   }
-    // ],
-    // '/router/': [
-    //   {
-    //     text: '@vue-gsap-flip/vue-router',
-    //     items: [
-    //       { text: 'Overview', link: '/router/' }
-    //     ]
-    //   }
-    // ],
-    // '/advanced/': [
-    //   {
-    //     text: 'Advanced Topics',
-    //     items: [
-    //       { text: 'Custom Plugin Development', link: '/advanced/' }
-    //     ]
-    //   }
-    // ],
-    // '/api/': [
-    //   {
-    //     text: 'API Reference',
-    //     items: [
-    //       { text: 'Core Package', link: '/api/core' },
-    //       { text: 'Router Package', link: '/api/router' },
-    //       { text: 'Types', link: '/api/types' }
-    //     ]
-    //   }
-    // ],
-    // '/examples/': [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Basic Usage', link: '/examples/basic' },
-    //       { text: 'Router Integration', link: '/examples/router' },
-    //       { text: 'Custom Guards', link: '/examples/guards' },
-    //       { text: 'Plugin System', link: '/examples/plugins' }
-    //     ]
-    //   }
-    // ]
-    // },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/lavolpecheprogramma/vue-gsap-flip' }
     ],
