@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.0.0...@vue-gsap-flip/core@1.1.0) (2025-07-24)
+
+
+### Features
+
+* add vFlip directive ([e5f392b](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/e5f392b1ccdab233ac6b6e51614ff67adfe210f4))
+
 # 1.0.0 (2025-07-23)
 
 
