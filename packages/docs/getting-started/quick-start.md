@@ -17,8 +17,8 @@ npm install @vue-gsap-flip/core gsap
 
 ## Your First Flip Animation
 There are two way to create make an element flippable:
-- using the [FlipElement](./core/FlipElement) component
-- using the [vFlip](./core/directive) directive
+- using the [FlipElement](../core/flip-element) component
+- using the [vFlip](../core/directive) directive
 
 In this example we create a simple flip animation that responds to a state changes:
 
