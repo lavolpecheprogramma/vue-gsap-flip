@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.1.0...@vue-gsap-flip/core@1.1.1) (2025-07-26)
+
+
+### Bug Fixes
+
+* update README ([f8392ac](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/f8392ac6e194dbffce99ef358f5e695c245ac754))
+
 # [1.1.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.0.0...@vue-gsap-flip/core@1.1.0) (2025-07-24)
 
 
