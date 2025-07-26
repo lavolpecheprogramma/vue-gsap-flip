@@ -1,7 +1,7 @@
 {
   "name": "@vue-gsap-flip/reduced-motion",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reduced motion support for vue-gsap-flip animations",
   "author": "Alberto Parziale <parziale.alberto@gmail.com>",
   "license": "MIT",
@@ -41,6 +41,6 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "1.0.0"
+    "@vue-gsap-flip/core": "1.1.1"
   }
 }

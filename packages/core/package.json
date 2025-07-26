@@ -1,7 +1,7 @@
 {
   "name": "@vue-gsap-flip/core",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Core FLIP animation functionality for Vue.js with GSAP integration",
   "author": "Alberto Parziale <parziale.alberto@gmail.com>",
   "license": "MIT",

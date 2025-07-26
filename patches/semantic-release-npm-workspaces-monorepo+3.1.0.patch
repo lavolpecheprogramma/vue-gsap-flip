@@ -1,0 +1,27 @@
+diff --git a/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js b/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js
+index 0fe0764..719ea52 100644
+--- a/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js
++++ b/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js
+@@ -1,8 +1,8 @@
+-import path from 'path';
+-import { cosmiconfig } from 'cosmiconfig';
+-import defaults from 'defaults';
+-import fs from 'fs/promises';
+-import micromatch from 'micromatch';
++import path from 'path'
++import { cosmiconfig } from 'cosmiconfig'
++import defaults from 'defaults'
++import fs from 'fs/promises'
++import micromatch from 'micromatch'
+ const CONFIG_NAME = 'workspaceRelease';
+ export const SETTINGS = {
+     preReleaseVersionTemplate: '${version}',
+@@ -172,7 +172,7 @@ function createPlugins(settings = SETTINGS) {
+         ...(settings.changelogCommit
+             ? [
+                 '@semantic-release/github',
+-                ['@semantic-release/git', { assets: ['CHANGELOG.md', 'LICENSE'] }],
++                ['@semantic-release/git', { assets: ['package.json', 'CHANGELOG.md', 'LICENSE'] }],
+             ]
+             : []),
+         ...settings.extendsDefaultPlugins,
