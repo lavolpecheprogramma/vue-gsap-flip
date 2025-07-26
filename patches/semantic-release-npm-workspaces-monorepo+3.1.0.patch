@@ -1,5 +1,5 @@
 diff --git a/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js b/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js
-index 0fe0764..719ea52 100644
+index 0fe0764..5ac2589 100644
 --- a/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js
 +++ b/node_modules/semantic-release-npm-workspaces-monorepo/dist/settings.js
 @@ -1,8 +1,8 @@
@@ -21,7 +21,7 @@ index 0fe0764..719ea52 100644
              ? [
                  '@semantic-release/github',
 -                ['@semantic-release/git', { assets: ['CHANGELOG.md', 'LICENSE'] }],
-+                ['@semantic-release/git', { assets: ['package.json', 'CHANGELOG.md', 'LICENSE'] }],
++                ['@semantic-release/git', { assets: ['package.json', "package-lock.json", 'CHANGELOG.md', 'LICENSE'] }],
              ]
              : []),
          ...settings.extendsDefaultPlugins,

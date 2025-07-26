@@ -34,7 +34,11 @@
     "docs:dev": "vitepress dev packages/docs",
     "docs:build": "vitepress build packages/docs",
     "docs:preview": "vitepress preview packages/docs",
-    "release": "semantic-release-npm-workspaces-monorepo"
+    "release": "semantic-release-npm-workspaces-monorepo",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "patch-package": "^8.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.17.0",
