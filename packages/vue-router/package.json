@@ -1,7 +1,7 @@
 {
   "name": "@vue-gsap-flip/vue-router",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue Router integration for vue-gsap-flip",
   "author": "Alberto Parziale <parziale.alberto@gmail.com>",
   "license": "MIT",
@@ -42,9 +42,148 @@
     "vue-router": "^4.0.0"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "1.1.1"
+    "@vue-gsap-flip/core": "1.1.2"
   },
   "devDependencies": {
     "vue-router": "^4.5.1"
+  },
+  "release": {
+    "extends": "semantic-release-commit-filter",
+    "ci": true,
+    "branches": [
+      "main",
+      "master",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "breaking": true,
+              "release": "major"
+            },
+            {
+              "revert": true,
+              "release": "patch"
+            },
+            {
+              "type": "*!",
+              "release": "major"
+            },
+            {
+              "type": "breaking",
+              "release": "major"
+            },
+            {
+              "type": "docs",
+              "scope": "README",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "style",
+              "release": "patch"
+            },
+            {
+              "type": "types",
+              "release": "patch"
+            }
+          ],
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "angular",
+          "presetConfig": {
+            "header": "Release Notes",
+            "types": [
+              {
+                "type": "feat",
+                "section": "Features"
+              },
+              {
+                "type": "fix",
+                "section": "Bug Fixes"
+              },
+              {
+                "type": "chore",
+                "hidden": true
+              },
+              {
+                "type": "docs",
+                "hidden": true
+              },
+              {
+                "type": "style",
+                "hidden": true
+              },
+              {
+                "type": "refactor",
+                "hidden": true
+              },
+              {
+                "type": "perf",
+                "hidden": true
+              },
+              {
+                "type": "test",
+                "hidden": true
+              }
+            ]
+          },
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          },
+          "writerOpts": {
+            "commitsSort": [
+              "subject",
+              "scope"
+            ]
+          }
+        }
+      ],
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "package-lock.json",
+            "CHANGELOG.md",
+            "LICENSE"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx -y semantic-release-npm-workspaces-monorepo cache ${nextRelease.version}"
+        }
+      ]
+    ],
+    "tagFormat": "@vue-gsap-flip/vue-router@${version}"
   }
 }
