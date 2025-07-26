@@ -98,6 +98,12 @@ const config: FlipElementConfig = {
 }
 ```
 
-## Examples
+## Documentation
 
-See the `examples/reduced-motion-usage.vue` file for a complete working example.
+For detailed documentation, examples, and advanced usage, visit:
+
+**[📖 Full Documentation](https://lavolpecheprogramma.github.io/vue-gsap-flip/reduced-motion/)**
+
+## License
+
+MIT

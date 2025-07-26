@@ -1,48 +1,40 @@
-#  @vue-gsap-flip/debug
+# @vue-gsap-flip/debug
 
-A simple debugging plugin for vue-gsap-flip that logs animation events to the console.
+Debug utilities for vue-gsap-flip animations.
+
+This package provides debugging tools and utilities to help you troubleshoot and optimize FLIP animations in your Vue 3 applications.
+
+## Features
+
+- **Animation Debugging**: Visual debugging tools for FLIP animations
+- **Performance Monitoring**: Track animation performance and timing
+- **State Inspection**: Inspect FLIP states and transitions
+- **Development Tools**: Enhanced debugging experience during development
 
 ## Installation
 
 ```bash
-npm install  @vue-gsap-flip/debug
+npm install @vue-gsap-flip/debug
 ```
 
 ## Usage
 
-```typescript
-import { createFlipManager } from '@vue-gsap-flip/core'
+```vue
+<script setup lang="ts">
+import { flipManager } from '@vue-gsap-flip/core'
 import { VueFlipDebugPlugin } from '@vue-gsap-flip/debug'
-import { createApp } from 'vue'
 
-const app = createApp(App)
-const flipManager = createFlipManager()
-
-// Install the debug plugin
-flipManager.use(VueFlipDebugPlugin)
-
-app.use(flipManager)
-app.mount('#app')
+// Important: The debug plugin should be registered LAST, after all other plugins
+flipManager.registerPlugin(VueFlipDebugPlugin)
+</script>
 ```
 
-## What it does
+## Documentation
 
-The debug plugin adds console logging for flip animations:
+For detailed documentation, examples, and advanced usage, visit:
 
-- **Animation Start**: Logs when a flip animation begins
-- **Animation Complete**: Logs when a flip animation finishes
+**[📖 Full Documentation](https://lavolpecheprogramma.github.io/vue-gsap-flip/)**
 
-## Console Output
+## License
 
-When animations occur, you'll see:
-
-```
-🔄 Flip Animation: my-element-id
-  Element: <div class="flip-element">...</div>
-  Config: { duration: 300, ease: "power2.out" }
-✅ Animation completed: my-element-id
-```
-
-## Development Only
-
-This plugin is designed for development use. Remove it in production builds.
+MIT
