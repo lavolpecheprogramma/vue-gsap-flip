@@ -20,8 +20,8 @@ export interface FlipElementConfigAugmentation {
 export type FlipElementConfig = BaseFlipElementConfig & FlipElementConfigAugmentation
 
 export interface FlipManager {
-  detach: (id: string, el: HTMLElement, config: FlipElementConfig) => void
-  attach: (id: string, el: HTMLElement, config: FlipElementConfig) => gsap.core.Timeline | undefined
+  detach: (id: string, el: Element, config: FlipElementConfig) => void
+  attach: (id: string, el: Element, config: FlipElementConfig) => gsap.core.Timeline | undefined
   store: Map<string, { state: Flip.FlipState, clone: Node | undefined, config: FlipElementConfig }>
   clearStore: () => void
   addDetachMiddleware: (middleware: DetachMiddleware) => void
@@ -36,11 +36,11 @@ export interface FlipManager {
 
 // Middleware types - return false to prevent the operation
 export interface DetachMiddleware {
-  (id: string, el: HTMLElement, config: FlipElementConfig): boolean | void
+  (id: string, el: Element, config: FlipElementConfig): boolean
 }
 
 export interface AttachMiddleware {
-  (id: string, el: HTMLElement, config: FlipElementConfig): boolean | void
+  (id: string, el: Element, config: FlipElementConfig): boolean
 }
 
 export interface FlipManagerMiddleware {

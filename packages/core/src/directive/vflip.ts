@@ -4,11 +4,11 @@ import { attach, detach } from '../core'
 import type { FlipElementConfig, FlipElementProps } from '../types'
 
 type VFlipElementProps = FlipElementProps & {
-  mounted: boolean
-  el: HTMLElement | null
+  'mounted': boolean
+  'el': Element | null
 }
 
-export type VFlipElement = HTMLElement & {
+export type VFlipElement = Element & {
   _vflip?: VFlipElementProps
 }
 
@@ -22,7 +22,7 @@ async function runAttach (el: VFlipElement) {
   await attach(el._vflip.id, el, el._vflip.config)
 }
 
-export const vFlip: Directive<HTMLElement, any> = {
+export const vFlip: Directive<Element, any> = {
   created: (el: VFlipElement, { arg, value }) => {
     if (!el._vflip) el._vflip = { el, enabled: true, mounted: false } as VFlipElementProps
     if (!arg) {

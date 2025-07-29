@@ -13,21 +13,23 @@ const props = withDefaults(defineProps<FlipElementProps>(), {
 })
 const emit = defineEmits(['attached', 'detached'])
 const { detach, attach } = useFlip()
-const el = ref<HTMLElement | ComponentPublicInstance>()
+const el = ref<Element | ComponentPublicInstance | null>()
 const mounted = ref(false)
+
 const config = computed(() => mergeDefaultConfig(props.config))
-const targetEl = computed(() => unrefElement(el) as HTMLElement | undefined)
-function setEl (node: HTMLElement | ComponentPublicInstance) {
+const targetEl = computed(() => unrefElement(el) as Element | undefined)
+
+function setEl (node: Element | ComponentPublicInstance | null) {
   el.value = node
 }
 
-function runDetach (target: HTMLElement | undefined) {
+function runDetach (target: Element | undefined) {
   if (!target) return
   detach(props.id, target, config.value)
   emit('detached')
 }
 
-async function runAttach (target: HTMLElement | undefined) {
+async function runAttach (target: Element | undefined) {
   if (!target) return
   await attach(props.id, target, config.value)
   emit('attached')

@@ -4,7 +4,7 @@ export const VueFlipDebugPlugin: VueFlipPlugin = {
   name: 'VueFlipDebug',
 
   install (flipManager: FlipManager) {
-    const debugMiddleware = (id: string, el: HTMLElement, config: FlipElementConfig) => {
+    const debugMiddleware = (id: string, el: Element, config: FlipElementConfig) => {
       console.group(`🔄 [VueFlipDebug] Detaching: ${id}`)
       console.log('Element:', el)
       console.log('Config:', config)
@@ -13,7 +13,7 @@ export const VueFlipDebugPlugin: VueFlipPlugin = {
       return true
     }
 
-    const completeMiddleware = (id: string, el: HTMLElement, config: FlipElementConfig) => {
+    const completeMiddleware = (id: string, el: Element, config: FlipElementConfig) => {
       console.group(`✅ [VueFlipDebug] Attaching: ${id}`)
       console.log('Element:', el)
       console.log('Config:', config)

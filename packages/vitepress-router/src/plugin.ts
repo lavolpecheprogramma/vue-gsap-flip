@@ -35,7 +35,7 @@ export const VueFlipVitepressRouterPlugin: VueFlipPlugin = {
       return true
     }
 
-    function detachMiddleware (_id: string, _el: HTMLElement, config: FlipElementConfig) {
+    function detachMiddleware (_id: string, _el: Element, config: FlipElementConfig) {
       return needFlip(config)
     }
 

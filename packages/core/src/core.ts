@@ -25,7 +25,7 @@ export function mergeDefaultConfig (elementConfig: FlipElementConfig): FlipEleme
   return deepMerge(defaultConfig, elementConfig)
 }
 
-export function detach (id: string, el: HTMLElement, _config: FlipElementConfig = {}) {
+export function detach (id: string, el: Element, _config: FlipElementConfig = {}) {
   const config = mergeDefaultConfig(_config)
   // Stop execution if middleware returns false
   if (detachMiddleware.some(middleware => middleware(id, el, config) === false)) return
@@ -40,14 +40,14 @@ export function detach (id: string, el: HTMLElement, _config: FlipElementConfig 
   if (config.clone) {
     clone = el.cloneNode(true)
     document.body.appendChild(clone)
-    Flip.fit(clone as HTMLElement, state)
+    Flip.fit(clone as Element, state)
     gsap.set(el, { autoAlpha: 0 })
     el.setAttribute('data-flip-state', 'detached')
   }
   store.set(id, { state, clone, config })
 }
 
-export function attach (id: string, el: HTMLElement, _config: FlipElementConfig = {}) {
+export function attach (id: string, el: Element, _config: FlipElementConfig = {}) {
   // if id is not in the store return
   const data = store.get(id)
   if (!data) return
