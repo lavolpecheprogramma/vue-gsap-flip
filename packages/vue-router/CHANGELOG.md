@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/vue-router@1.0.3...@vue-gsap-flip/vue-router@1.1.0) (2025-07-29)
+
+
+### Features
+
+* export checkAllowedRoute function ([d4fd21b](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/d4fd21b89866aaab38df77b20dcb2e2603680c3f))
+
 ## [1.0.3](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/vue-router@1.0.2...@vue-gsap-flip/vue-router@1.0.3) (2025-07-29)
 
 
