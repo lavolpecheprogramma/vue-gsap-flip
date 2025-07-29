@@ -8,6 +8,8 @@ type VFlipElementProps = FlipElementProps & {
   'el': Element | null
   'on-attached'?: (el: VFlipElement) => void
   'on-detached'?: (el: VFlipElement) => void
+  '@attached'?: (el: VFlipElement) => void
+  '@detached'?: (el: VFlipElement) => void
 }
 
 export type VFlipElement = Element & {
@@ -18,12 +20,14 @@ function runDetach (el: VFlipElement) {
   if (!el?._vflip) return
   detach(el._vflip.id, el, el._vflip.config)
   el._vflip['on-detached']?.(el)
+  el._vflip['@detached']?.(el)
 }
 
 async function runAttach (el: VFlipElement) {
   if (!el?._vflip) return
   await attach(el._vflip.id, el, el._vflip.config)
   el._vflip['on-attached']?.(el)
+  el._vflip['@attached']?.(el)
 }
 
 export const vFlip: Directive<Element, any> = {
