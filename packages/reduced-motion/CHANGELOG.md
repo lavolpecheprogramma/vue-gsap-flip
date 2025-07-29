@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/reduced-motion@1.0.3...@vue-gsap-flip/reduced-motion@1.0.4) (2025-07-29)
+
+
+### Bug Fixes
+
+* update package.json ([7707563](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/770756345bf90c021c2832d1795d0b61a941b995))
+
 ## [1.0.3](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/reduced-motion@1.0.2...@vue-gsap-flip/reduced-motion@1.0.3) (2025-07-29)
 
 
