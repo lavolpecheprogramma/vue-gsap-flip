@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.2...@vue-gsap-flip/core@1.2.3) (2025-07-29)
+
+
+### Bug Fixes
+
+* allow callbacks with @ prefix in directive ([07bc40f](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/07bc40f8ee62f43f36cfcf99e441ba289d003163))
+
 ## [1.2.2](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.1...@vue-gsap-flip/core@1.2.2) (2025-07-29)
 
 
