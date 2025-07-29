@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
-    "@vueuse/core": "^13.5.0",
     "gsap": "^3.13.0",
     "typescript": "^5.8.3",
     "vite": "^7.0.4",

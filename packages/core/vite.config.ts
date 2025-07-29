@@ -18,7 +18,7 @@ export default defineConfig({
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: ['vue', 'vue-router', '@vueuse/core', 'gsap', 'gsap/Flip']
+      external: ['vue', 'vue-router', 'gsap', 'gsap/Flip']
     }
   }
 })

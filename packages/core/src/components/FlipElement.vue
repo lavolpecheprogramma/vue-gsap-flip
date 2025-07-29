@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { unrefElement } from '@vueuse/core'
 import type { ComponentPublicInstance } from 'vue'
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, toValue, watch } from 'vue'
 
 import { useFlip } from '../composable/useFlip'
 import { mergeDefaultConfig } from '../core'
@@ -17,8 +16,10 @@ const el = ref<Element | ComponentPublicInstance | null>()
 const mounted = ref(false)
 
 const config = computed(() => mergeDefaultConfig(props.config))
-// @ts-expect-error - unrefElement
-const targetEl = computed(() => unrefElement(el))
+const targetEl = computed(() => {
+  const _el = toValue(el.value)
+  return (_el as ComponentPublicInstance)?.$el || _el
+})
 
 function setEl (node: Element | ComponentPublicInstance | null) {
   el.value = node
