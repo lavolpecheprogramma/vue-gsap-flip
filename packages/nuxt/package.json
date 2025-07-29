@@ -1,7 +1,7 @@
 {
   "name": "@vue-gsap-flip/nuxt",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Nuxt 3 module for vue-gsap-flip with auto-registration",
   "author": "Alberto Parziale <parziale.alberto@gmail.com>",
   "license": "MIT",
@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.0.1",
-    "@vue-gsap-flip/core": "^1.2.0",
+    "@vue-gsap-flip/core": "^1.2.3",
     "@vue-gsap-flip/vue-router": "^1.1.0"
   },
   "devDependencies": {
