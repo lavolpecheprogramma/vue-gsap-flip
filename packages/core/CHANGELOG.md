@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.1...@vue-gsap-flip/core@1.2.2) (2025-07-29)
+
+
+### Bug Fixes
+
+* pass el as argument in on-attached directive event ([c43f3d2](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/c43f3d28c96e799b40014a261411b6c6bca6962d))
+* remove @vueuse/core dependency ([7ad0a53](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/7ad0a53379bd837f111220640f158171cb179c15))
+
 ## [1.2.1](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.0...@vue-gsap-flip/core@1.2.1) (2025-07-29)
 
 
