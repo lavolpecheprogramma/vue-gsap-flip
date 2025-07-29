@@ -41,13 +41,23 @@ export function detach (id: string, el: Element, _config: FlipElementConfig = {}
     clone = el.cloneNode(true)
     document.body.appendChild(clone)
     Flip.fit(clone as Element, state)
-    gsap.set(el, { autoAlpha: 0 })
+    el.setAttribute('data-flip-state-alpha', `${(el as HTMLElement).style?.opacity}`)
     el.setAttribute('data-flip-state', 'detached')
+    gsap.set(el, { opacity: 0 })
   }
   store.set(id, { state, clone, config })
 }
 
 export function attach (id: string, el: Element, _config: FlipElementConfig = {}) {
+  // if the element is detached restore the alpha
+  if (el.getAttribute('data-flip-state') === 'detached') {
+    if ((el as HTMLElement).style) {
+      (el as HTMLElement).style.opacity = el.getAttribute('data-flip-state-alpha') || ''
+    }
+    el.removeAttribute('data-flip-state')
+    el.removeAttribute('data-flip-state-alpha')
+  }
+
   // if id is not in the store return
   const data = store.get(id)
   if (!data) return
@@ -58,11 +68,6 @@ export function attach (id: string, el: Element, _config: FlipElementConfig = {}
 
   // Stop execution if middleware returns false
   if (attachMiddleware.some(middleware => middleware(id, el, config) === false)) return
-  // if the element is detached restore the alpha
-  if (el.getAttribute('data-flip-state') === 'detached') {
-    gsap.set(el, { autoAlpha: 1 })
-    el.removeAttribute('data-flip-state')
-  }
 
   // apply the flip id for gsap
   el.setAttribute('data-flip-id', id)
