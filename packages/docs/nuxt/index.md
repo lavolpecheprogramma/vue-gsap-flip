@@ -71,12 +71,12 @@ Register FLIP plugins with the module.
 vueGsapFlip: {
   plugins: [
     { name: 'MyPlugin', from: '@/plugins/my-plugin' },
-    { name: 'VueFlipRouterPlugin', from: '@vue-gsap-flip/vue-router' },
     { name: 'VueFlipReducedMotionPlugin', from: '@vue-gsap-flip/reduced-motion' },
     { name: 'VueFlipDebugPlugin', from: '@vue-gsap-flip/debug' }
   ]
 }
 ```
+Important: not use the vue-router plugin, the module provide this functionality yet.
 
 ## Requirements
 

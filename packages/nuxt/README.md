@@ -53,6 +53,7 @@ vueGsapFlip: {
   ]
 }
 ```
+Important: not use the vue-router plugin, the module provide this functionality yet.
 
 ## Requirements
 
