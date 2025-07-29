@@ -1,7 +1,7 @@
 {
   "name": "@vue-gsap-flip/vitepress-router",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "VitePress router integration for vue-gsap-flip animations",
   "author": "Alberto Parziale <parziale.alberto@gmail.com>",
   "license": "MIT",
@@ -42,7 +42,7 @@
     "vue-router": "^4.0.0"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "1.1.2"
+    "@vue-gsap-flip/core": "1.2.0"
   },
   "devDependencies": {
     "vitepress": "^1.6.3",

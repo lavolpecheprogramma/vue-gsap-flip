@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/vitepress-router@1.0.1...@vue-gsap-flip/vitepress-router@1.0.2) (2025-07-29)
+
+
+### Bug Fixes
+
+* dom element is now typed as Element ([e4f2f19](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/e4f2f191e74573cbd5a210312dc06fd47f6530f9))
+
 ## [1.0.1](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/vitepress-router@1.0.0...@vue-gsap-flip/vitepress-router@1.0.1) (2025-07-26)
 
 
