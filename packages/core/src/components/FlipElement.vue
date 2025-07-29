@@ -17,7 +17,8 @@ const el = ref<Element | ComponentPublicInstance | null>()
 const mounted = ref(false)
 
 const config = computed(() => mergeDefaultConfig(props.config))
-const targetEl = computed(() => unrefElement(el) as Element | undefined)
+// @ts-expect-error - unrefElement
+const targetEl = computed(() => unrefElement(el))
 
 function setEl (node: Element | ComponentPublicInstance | null) {
   el.value = node

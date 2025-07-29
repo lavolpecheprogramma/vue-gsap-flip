@@ -23,7 +23,7 @@ function runDetach (el: VFlipElement) {
 async function runAttach (el: VFlipElement) {
   if (!el?._vflip) return
   await attach(el._vflip.id, el, el._vflip.config)
-  el._vflip['on-attached']?.()
+  el._vflip['on-attached']?.(el)
 }
 
 export const vFlip: Directive<Element, any> = {
