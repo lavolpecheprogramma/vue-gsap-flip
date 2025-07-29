@@ -41,7 +41,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "1.2.0"
+    "@vue-gsap-flip/core": "^1.2.0"
   },
   "release": {
     "extends": "semantic-release-commit-filter",
