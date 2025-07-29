@@ -26,22 +26,24 @@ function setEl (node: Element | ComponentPublicInstance | null) {
 function runDetach (target: Element | undefined) {
   if (!target) return
   detach(props.id, target, config.value)
-  emit('detached')
+  emit('detached', target)
 }
 
 async function runAttach (target: Element | undefined) {
   if (!target) return
   await attach(props.id, target, config.value)
-  emit('attached')
+  emit('attached', target)
 }
 
 watch(
   [targetEl, mounted, () => props.enabled],
   async ([target, mounted, enabled], [prevTarget, prevMounted, prevEnabled]) => {
-    if (prevTarget && prevMounted && prevEnabled) {
-      runDetach(prevTarget)
+    if (!target || !mounted) {
+      if (prevTarget && prevMounted && prevEnabled) {
+        runDetach(prevTarget)
+      }
+      return
     }
-    if (!target || !mounted) return
     if (!enabled) {
       runDetach(target)
     } else {
@@ -62,10 +64,7 @@ watch([targetEl, () => props.trigger], async ([el, trigger]) => {
 }, { flush: 'post', deep: 2 })
 
 onMounted(() => (mounted.value = true))
-onBeforeUnmount(() => {
-  mounted.value = false
-  runDetach(unrefElement(el) as HTMLElement)
-})
+onBeforeUnmount(() => (mounted.value = false))
 defineExpose({ setEl })
 </script>
 

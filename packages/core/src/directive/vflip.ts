@@ -1,11 +1,13 @@
 import type { Directive } from 'vue'
 
 import { attach, detach } from '../core'
-import type { FlipElementConfig, FlipElementProps } from '../types'
+import type { FlipElementProps } from '../types'
 
 type VFlipElementProps = FlipElementProps & {
   'mounted': boolean
   'el': Element | null
+  'on-attached'?: (el: VFlipElement) => void
+  'on-detached'?: (el: VFlipElement) => void
 }
 
 export type VFlipElement = Element & {
@@ -15,27 +17,29 @@ export type VFlipElement = Element & {
 function runDetach (el: VFlipElement) {
   if (!el?._vflip) return
   detach(el._vflip.id, el, el._vflip.config)
+  el._vflip['on-detached']?.(el)
 }
 
 async function runAttach (el: VFlipElement) {
   if (!el?._vflip) return
   await attach(el._vflip.id, el, el._vflip.config)
+  el._vflip['on-attached']?.()
 }
 
 export const vFlip: Directive<Element, any> = {
   created: (el: VFlipElement, { arg, value }) => {
     if (!el._vflip) el._vflip = { el, enabled: true, mounted: false } as VFlipElementProps
     if (!arg) {
-      el._vflip.id = value as string
+      el._vflip!.id = value
+    } else {
+      // @ts-expect-error type mismatch
+      el._vflip![arg] = value
     }
-    if (arg === 'id') el._vflip.id = value as string
-    if (arg === 'enabled') el._vflip.enabled = value as boolean
-    if (arg === 'trigger') el._vflip.trigger = value
-    if (arg === 'config') el._vflip.config = value as FlipElementConfig
   },
   mounted: async (el: VFlipElement, { arg }) => {
     if (arg || !el._vflip) return
     el._vflip.mounted = true
+    await runAttach(el)
   },
   beforeUpdate: (el: VFlipElement, { arg, value, oldValue }) => {
     if (!el._vflip || !el._vflip.mounted || !el._vflip.enabled) return
@@ -46,8 +50,13 @@ export const vFlip: Directive<Element, any> = {
   },
   updated: async (el: VFlipElement, { arg, value, oldValue }) => {
     if (!el._vflip || !el._vflip.mounted) return
-    // @ts-expect-error type mismatch
-    el._vflip![arg] = value
+
+    if (!arg) {
+      el._vflip!.id = value
+    } else {
+      // @ts-expect-error type mismatch
+      el._vflip![arg] = value
+    }
 
     if (arg === 'trigger' && el._vflip.enabled && value !== oldValue) {
       await runAttach(el)
@@ -55,9 +64,9 @@ export const vFlip: Directive<Element, any> = {
       await runAttach(el)
     }
   },
-  unmounted: (el: VFlipElement, { arg }) => {
+  beforeUnmount: (el: VFlipElement, { arg }) => {
     if (arg || !el._vflip) return
-    el._vflip.mounted = false
     runDetach(el)
+    el._vflip.mounted = false
   }
 }
