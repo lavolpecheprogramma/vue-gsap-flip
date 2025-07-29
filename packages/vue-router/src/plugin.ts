@@ -27,6 +27,26 @@ function isAllowedRoute (permission: RouteConfig, route: RouteLocationNormalized
   }))
 }
 
+export function checkAllowedRoute (config: FlipElementConfig, to?: RouteLocationNormalizedGeneric, from?: RouteLocationNormalizedGeneric) {
+  // no route configured, continue
+  if (!config.routes) return true
+  // no route to flip, stop execution
+  if (!to) return false
+  const configMatch = config.routes.find(route => isAllowedRoute(route, to!))
+  // routes are configured but no route match, stop execution
+  if (!configMatch) return false
+
+  if (configMatch.from) {
+    if (!from) return false
+    const prevRouteMatch = configMatch.from.find(route => isAllowedRoute(route, from!))
+    if (!prevRouteMatch) return false
+  }
+  if (configMatch.config) {
+    config = deepMerge<FlipElementConfig>(config, configMatch.config)
+  }
+  return true
+}
+
 export const VueFlipRouterPlugin: VueFlipPlugin = {
   name: 'VueFlipRouter',
 
@@ -40,36 +60,17 @@ export const VueFlipRouterPlugin: VueFlipPlugin = {
       prevRoute.value = from
     })
 
-    function needFlip (config: FlipElementConfig) {
-      // no route configured, continue
-      if (!config.routes) return true
-      // no route to flip, stop execution
-      if (!nextRoute.value) return false
-      const configMatch = config.routes.find(route => isAllowedRoute(route, nextRoute.value!))
-      // routes are configured but no route match, stop execution
-      if (!configMatch) return false
-
-      if (configMatch.from) {
-        const prevRouteMatch = configMatch.from.find(route => isAllowedRoute(route, prevRoute.value!))
-        if (!prevRouteMatch) return false
-      }
-      if (configMatch.config) {
-        config = deepMerge<FlipElementConfig>(config, configMatch.config)
-      }
-      return true
-    }
-
     function detachMiddleware (_id: string, _el: Element, config: FlipElementConfig) {
-      return needFlip(config)
+      return checkAllowedRoute(config, nextRoute.value, prevRoute.value)
     }
 
     // Add middleware to the flip manager
     flipManager.addDetachMiddleware(detachMiddleware)
 
     // Watch for route changes and clean up orphan elements
-    const stopWatcher = watch(nextRoute, () => {
+    const stopWatcher = watch(nextRoute, (to) => {
       for (const [id, data] of flipManager.store.entries()) {
-        if (needFlip(data.config)) continue
+        if (checkAllowedRoute(data.config, to, prevRoute.value)) continue
         if (data.clone) document.body.removeChild(data.clone)
         flipManager.store.delete(id)
       }
