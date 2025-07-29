@@ -10,7 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 console.log('🏗️  Building Vue Flip Monorepo...')
 
 // Check if packages exist
-const packages = ['core', 'debug', 'vue-router', 'vitepress-router', 'reduced-motion']
+const packages = ['core', 'debug', 'vue-router', 'vitepress-router', 'reduced-motion', 'nuxt']
 const missingPackages = packages.filter(pkg => !fs.existsSync(path.join(__dirname, '..', 'packages', pkg)))
 
 if (missingPackages.length > 0) {

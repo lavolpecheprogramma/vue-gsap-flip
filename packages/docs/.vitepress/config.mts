@@ -80,6 +80,12 @@ export default defineConfig({
         items: [
           { text: 'Quick start', link: '/debug/' }
         ]
+      },
+      {
+        text: '@vue-gsap-flip/nuxt',
+        items: [
+          { text: 'Quick start', link: '/nuxt/' }
+        ]
       }
     ],
     socialLinks: [
