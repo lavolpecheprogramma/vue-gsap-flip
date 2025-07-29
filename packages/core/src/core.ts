@@ -1,5 +1,5 @@
 import { gsap } from 'gsap'
-import Flip from 'gsap/Flip'
+import { Flip } from 'gsap/Flip'
 
 import type { AttachMiddleware, DetachMiddleware, FlipElementConfig, VueFlipPlugin } from './types'
 import { deepMerge } from './utils'
