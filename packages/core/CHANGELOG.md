@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.0...@vue-gsap-flip/core@1.2.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* update gsap flip import ([0410f5c](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/0410f5cf4146f0948627582beb50f5f1cf78b745))
+
 # [1.2.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.1.2...@vue-gsap-flip/core@1.2.0) (2025-07-29)
 
 
