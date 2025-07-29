@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/docs@1.1.0...@vue-gsap-flip/docs@1.2.0) (2025-07-29)
+
+
+### Features
+
+* add @vue-gsap-flip/vue-router dependency and provide the route transition functionality built-in (nuxt router compatibility) ([aee69db](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/aee69db2ba5d118c29219c4f0023dfd51f9cf14b))
+
 # [1.1.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/docs@1.0.0...@vue-gsap-flip/docs@1.1.0) (2025-07-29)
 
 

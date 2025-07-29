@@ -16,11 +16,11 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@vue-gsap-flip/core": "1.2.0",
+    "@vue-gsap-flip/core": "1.2.3",
     "@vue-gsap-flip/debug": "^1.0.2",
-    "@vue-gsap-flip/reduced-motion": "^1.0.3",
+    "@vue-gsap-flip/reduced-motion": "^1.0.4",
     "@vue-gsap-flip/vitepress-router": "^1.0.2",
-    "@vue-gsap-flip/vue-router": "^1.0.2",
+    "@vue-gsap-flip/vue-router": "^1.1.0",
     "gsap": "^3.13.0",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
