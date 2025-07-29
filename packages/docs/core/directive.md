@@ -3,9 +3,9 @@ import DirectiveBasicCardFlip from '../components/DirectiveBasicCardFlip.vue'
 </script>
 # vFlip directive
 
-The `vFlip` directive is an other way to create flip animations in Vue Flip. It provides a clean, declarative API **without** wrapping your content and handling flip animations automatically.
+The `vFlip` directive is another way to create flip animations in Vue Flip. It provides a clean, declarative API **without** wrapping your content and handling flip animations automatically.
 
-All options are the same of [Flip element](./flip-element) but applied directly on the dom element that you want to flip.
+All options are the same as [Flip element](./flip-element) but applied directly on the DOM element that you want to flip.
 
 ## Installation
 The common way to install a directive is to attach it directly on the app and make it available everywhere.
@@ -39,8 +39,53 @@ const myTrigger = ref(false)
   </div>
 </template>
 ```
+
+## Advanced Usage with Event Callbacks
+
+The directive supports event callbacks for tracking animation states:
+
+```vue
+<script setup>
+function handleAttached (el) {
+  console.log('Element attached:', el)
+  // Animation completed
+}
+
+function handleDetached (el) {
+  console.log('Element detached:', el)
+  // Element state captured
+}
+</script>
+
+<template>
+  <div
+    v-flip="'my-element'"
+    v-flip:@attached="handleAttached"
+    v-flip:@detached="handleDetached"
+    v-flip:config="{ clone: true }"
+    v-flip:enabled="enabled"
+    v-flip:trigger="myTrigger"
+  >
+    <!-- Your content here -->
+  </div>
+</template>
+```
+
+## Directive Arguments
+
+The directive supports various arguments for configuration:
+
+| Argument | Type | Description |
+|----------|------|-------------|
+| `id` | `string` | Unique identifier for the element |
+| `enabled` | `boolean` | Controls whether flip is enabled |
+| `trigger` | `any` | Trigger value for manual animation |
+| `config` | `FlipElementConfig` | Animation configuration object |
+| `on-attached` or `@attached` | `(el: Element) => void` | Callback when element is attached |
+| `on-detached` or `@detached` | `(el: Element) => void` | Callback when element is detached |
+
 ## Examples
-This example is the same of FlipElement but using the directive.
+This example is the same as FlipElement but using the directive.
 
 <DirectiveBasicCardFlip />
 ::: details Demo code

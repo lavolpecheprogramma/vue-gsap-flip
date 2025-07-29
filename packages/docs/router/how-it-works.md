@@ -87,7 +87,7 @@ This function supports:
 The plugin registers a single middleware function that intercepts detach animation requests:
 
 ```typescript
-function detachMiddleware (_id: string, _el: HTMLElement, config: FlipElementConfig) {
+function detachMiddleware (_id: string, _el: Element, config: FlipElementConfig) {
   return needFlip(config)
 }
 

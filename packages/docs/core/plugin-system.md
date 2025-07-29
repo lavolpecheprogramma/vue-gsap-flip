@@ -87,12 +87,12 @@ const MiddlewarePlugin: VueFlipPlugin = {
 
   install (flipManager) {
     // Create middleware functions
-    const detachMiddleware = (id: string, el: HTMLElement, config: FlipElementConfig) => {
+    const detachMiddleware = (id: string, el: Element, config: FlipElementConfig) => {
       console.log(`Detaching element: ${id}`)
       return true // Allow the operation
     }
 
-    const attachMiddleware = async (id: string, el: HTMLElement, config: FlipElementConfig) => {
+    const attachMiddleware = async (id: string, el: Element, config: FlipElementConfig) => {
       console.log(`Attaching element: ${id}`)
       return true // Allow the operation
     }
@@ -146,7 +146,7 @@ const Plugin1 = { name: 'plugin1' }
 const RobustPlugin: VueFlipPlugin = {
   name: 'robust',
   install (flipManager) {
-    const middleware = (id: string, el: HTMLElement, config: FlipElementConfig) => {
+    const middleware = (id: string, el: Element, config: FlipElementConfig) => {
       try {
         // Your middleware logic
         return true
@@ -180,7 +180,7 @@ declare module '@vue-gsap-flip/core' {
 const MyPlugin: VueFlipPlugin = {
   name: 'my-plugin',
   install (flipManager) {
-    const middleware = (id: string, el: HTMLElement, config: FlipElementConfig) => {
+    const middleware = (id: string, el: Element, config: FlipElementConfig) => {
       if (config.myPluginOption) {
         // Handle plugin-specific configuration
         console.log('My plugin option enabled')

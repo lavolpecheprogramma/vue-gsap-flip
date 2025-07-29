@@ -20,11 +20,11 @@ This creates a media query listener that checks the current state of the user's 
 The plugin registers middleware functions with the Flip Manager that intercept animation requests:
 
 ```typescript
-function detachMiddleware (_id: string, _el: HTMLElement, config: FlipElementConfig) {
+function detachMiddleware (_id: string, _el: Element, config: FlipElementConfig) {
   return isReducedMotion && config.respectReducedMotion === false
 }
 
-function attachMiddleware (_id: string, _el: HTMLElement, config: FlipElementConfig) {
+function attachMiddleware (_id: string, _el: Element, config: FlipElementConfig) {
   return isReducedMotion && config.respectReducedMotion === false
 }
 ```
