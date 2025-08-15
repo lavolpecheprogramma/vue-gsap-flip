@@ -52,6 +52,9 @@ const flipManager = useFlip()
 // Register a plugin
 flipManager.registerPlugin(MyPlugin)
 
+// Check if plugin is installed
+flipManager.hasPlugin(MyPlugin)
+
 // Unregister a plugin
 flipManager.unregisterPlugin({ name: 'my-plugin' })
 </script>

@@ -128,12 +128,9 @@ export const flipManager = {
   addAttachMiddleware,
   removeDetachMiddleware,
   removeAttachMiddleware,
-  setDefault: (config: FlipElementConfig) => {
-    defaultConfig = config
-  },
-  getDefault: (): FlipElementConfig => {
-    return { ...defaultConfig }
-  },
+  getDefault: (): FlipElementConfig => ({ ...defaultConfig }),
+  setDefault: (config: FlipElementConfig) => (defaultConfig = config),
+  hasPlugin: (plugin: VueFlipPlugin) => plugins.has(plugin.name),
   registerPlugin: (plugin: VueFlipPlugin, options?: unknown) => {
     if (plugins.has(plugin.name)) {
       console.warn(`VueFlip: Plugin "${plugin.name}" is already registered`)
