@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/nuxt@1.1.0...@vue-gsap-flip/nuxt@1.1.1) (2025-08-15)
+
+
+### Bug Fixes
+
+* resolve installed plugin warning on nuxt ([d08c354](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/d08c354c65f4dfdee16c1a6a27fb6e23cb78234e))
+
 # [1.1.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/nuxt@1.0.0...@vue-gsap-flip/nuxt@1.1.0) (2025-07-29)
 
 
