@@ -30,6 +30,7 @@ export interface FlipManager {
   removeAttachMiddleware: (middleware: AttachMiddleware) => void
   setDefault: (config: FlipElementConfig) => void
   getDefault: () => FlipElementConfig
+  hasPlugin: (plugin: VueFlipPlugin) => boolean
   registerPlugin: (plugin: VueFlipPlugin, options?: unknown) => void
   unregisterPlugin: (plugin: VueFlipPlugin) => void
 }
