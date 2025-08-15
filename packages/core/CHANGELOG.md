@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.3...@vue-gsap-flip/core@1.3.0) (2025-08-15)
+
+
+### Features
+
+* add hasPlugin function to check if a plugin is installed yet ([02f334a](https://github.com/lavolpecheprogramma/vue-gsap-flip/commit/02f334a9fdccd5996fad57d47fb99ae1238f3f63))
+
 ## [1.2.3](https://github.com/lavolpecheprogramma/vue-gsap-flip/compare/@vue-gsap-flip/core@1.2.2...@vue-gsap-flip/core@1.2.3) (2025-07-29)
 
 
