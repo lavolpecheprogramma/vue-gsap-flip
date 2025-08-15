@@ -15,6 +15,15 @@ export default defineNuxtConfig({
 })
 ```
 
+If you find a problem with the "gsap/Flip" import ("Did you mean to import 'gsap/Flip.js'"), please add this configuration to your nuxt config:
+
+```ts
+build: {
+  transpile: [
+    'gsap'
+  ]
+}
+```
 ## Features
 
 - **Auto-registration**: `FlipElement`, `useFlip`, and `v-flip` directive

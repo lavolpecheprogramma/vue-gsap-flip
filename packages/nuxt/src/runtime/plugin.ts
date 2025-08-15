@@ -6,7 +6,6 @@ import { directive, plugins } from '#build/vue-gsap-flip.config.mjs'
 import { shallowRef, watch } from 'vue'
 import type { RouteLocationNormalizedGeneric } from 'vue-router'
 
-const registeredPlugins: string[] = []
 const nextRoute = shallowRef<RouteLocationNormalizedGeneric>()
 const prevRoute = shallowRef<RouteLocationNormalizedGeneric>()
 
@@ -44,15 +43,14 @@ export default defineNuxtPlugin((nuxtApp) => {
     prevRoute.value = from
   }, { global: true })
 
-  if (!registeredPlugins.includes(VueFlipNuxtRouterPlugin.name)) {
+  if (!flipManager.hasPlugin(VueFlipNuxtRouterPlugin)) {
     flipManager.registerPlugin(VueFlipNuxtRouterPlugin)
   }
   // Register plugins if provided
   if (plugins.length > 0) {
     plugins.forEach((plugin: VueFlipPlugin) => {
-      if (!registeredPlugins.includes(plugin.name)) {
+      if (!flipManager.hasPlugin(VueFlipNuxtRouterPlugin)) {
         flipManager.registerPlugin(plugin)
-        registeredPlugins.push(plugin.name)
       }
     })
   }

@@ -18,6 +18,16 @@ export default defineNuxtConfig({
 })
 ```
 
+If you find a problem with the "gsap/Flip" import, please add this configuration to your nuxt config:
+
+```ts
+build: {
+ transpile: [
+   "gsap"
+ ]
+}
+```
+
 ## What it does
 
 This module automatically registers:
